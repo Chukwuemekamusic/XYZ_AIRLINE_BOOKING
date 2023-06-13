@@ -1,0 +1,13 @@
+flight_number,departure_city,arrival_city,departure_time,arrival_time,economy_class_cost,business_class_cost
+F001,New York,London,9:00 AM,2:00 PM,$500,$1000
+F002,London,New York,3:00 PM,8:00 PM,$550,$1100
+F003,New York,Paris,11:00 AM,3:00 PM,$450,$950
+F004,Paris,New York,4:00 PM,8:00 PM,$500,$1000
+F005,New York,Tokyo,1:00 PM,5:00 PM,$800,$1500
+F006,Tokyo,New York,7:00 PM,11:00 AM,$850,$1600
+F007,London,New York,10:30 AM,12:30 PM,$300,$700
+F008,New York,London,1:30 PM,3:30 PM,$350,$750
+F009,London,Madrid,9:00 AM,12:00 PM,$400,$900
+F010,Madrid,London,1:00 PM,4:00 PM,$450,$950
+F011,New York,Tokyo,8:00 AM,10:00 AM,$200,$400
+F012,Tokyo,New York,11:00 AM,1:00 PM,$250,$450
