@@ -1,0 +1,105 @@
+= XYZ Airline Ticket Booking System (_CS50 Introduction to Programming with Python_)
+:data-uri:
+:experimental:
+:nofooter:
+:last-update-label!:
+:numbered!:
+:toc: left
+:toclevels: 4
+:icons: font
+:source-highlighter: highlightjs
+:toc-title: {doctitle}
+
+Video Demo: link:https://youtu.be/T_C2d2ZwfcM[]
+
+== Description:
+
+The XYZ Airline Ticket Booking System is a command-line application that allows users to search for flights, book tickets, check-in for flights, and manage membership. The system interacts with the user through a series of menus and input prompts.
+
+== Features
+
+* *Flight Search and Booking*: Users can search for available flights by specifying the departure and destination cities. The system displays the list of available flights, and users can select a flight to book a ticket. The system prompts users to enter their details, choose a seat, and make a payment to complete the booking.
+
+* *Flight Check-in*: Users can check-in for their flights by selecting the check-in option from the menu. (This feature is yet to be implemented in the code.)
+
+* *Membership Management*: Users can register for membership with XYZ Airline by providing their personal details. Existing members can view their membership information, including the membership status. Users can also cancel their membership if desired.
+
+* *Input Validation*: The system validates user input, such as email addresses and seat selections, to ensure the data entered is in the correct format.
+
+* *Email Notification*: After successfully booking a flight, the system sends a confirmation email to the user's provided email address. (This feature is mentioned in the code but not implemented.)
+
+== Code Organization
+
+The code is organized into different modules/classes to handle various functionalities of the system:
+
+* `flight.py`: Contains the Flight class for managing flights.
+* `customer.py`: Contains the Customer class for managing customer information.
+* `card_validator.py`: Contains the CardValidator class for validating card details.
+* `card.py`: Contains the Card class for handling payment cards.
+
+== Usage
+
+To use the XYZ Airline Ticket Booking System, follow these steps:
+
+1. Run the `main.py` file in a command-line environment.
+2. The system will present a menu with different options.
+3. Enter the corresponding number for the desired option.
+4. Follow the prompts and input the required information according to the selected option.
+5. Complete the booking, check-in, or membership management process as guided by the system.
+
+
+== Environment setup
+
+----
+#-- 1. Create virtual env:
+python -m venv venv
+source venv/bin/activate
+
+#-- 2. Install required packages
+pip install -r requirements.txt
+----
+
+
+== Functions and classes
+
+TODO: Review this section.
+
+.Main function:
+The `main()` function serves as the entry point for the program and handles the main menu of the application.
+
+The `menu()` function displays the main menu options and allows the user to select one.
+The search_flights(departure_city, arrival_city) function takes in a departure city and an arrival city and searches for flights that match those cities, returning a list of flights that match.
+
+The `is_email(email)` function takes in an email address and uses the validate_email function from the email_validator library to check if the email is valid.
+
+The `get_customer_detail(flight)` function prompts the user for their personal information and creates a new customer object or retrieves an existing one and assigns the flight to the customer.
+
+The `fetch_or_create_customer(first_name, last_name, email_address)` function searches for an existing customer with the provided name and email and if not found, it creates a new customer.
+
+The `get_membership_detail()` function prompts the user for their personal information and return first_name, last_name, email_address.
+
+The `seat_allocation(customer, flight)` function allows the customer to pick a seat for their flight and the process_payment(flight, customer) function handles the process of validating and processing a customer's payment for their flight.
+If the payment is successful, the flight is marked as booked and the customer's payment is updated. 
+
+.The Flight class:
+This is the Flight class which represents a flight in the reservation system. 
+The class has several properties such as flight number, departure city, arrival city, departure time, arrival time, economy class cost, and business class cost.
+It also has several methods such as `cost()` which returns the cost of a flight based on the class of payment, `allocate_seat()` which assigns a seat to a customer, `check_seat_in_already_booked()` which checks if a seat is already booked, `seat_confirmation_text()` which returns a confirmation message for a customer's seat reservation, and `get_passengers()` which returns the list of passengers on a flight.
+The class also keeps track of all the flights in the system using the all_flights class variable.
+Overall, this class seems to handle most of the functionality related to flight reservations.
+
+.The Customer class:
+This script defines a Customer class with several methods and class methods.
+The `__init__` method is  called when a new customer object is created, and it initializes the properties of the object including the customer's first and last name, email address, and flight information.
+The class also has a class variable `all_customers` that keeps track of all customer objects that have been created.
+The class also has a class variable `all_members` that keeps track of all customer objects that have an active membership.
+The add_membership method adds the customer object to the `all_members` list and the `remove_membership` method removes the customer object from the `all_members` list.
+
+.The CardValidator class:
+This is class allows users to input their credit card information and validate it based on certain rules.
+The class has several methods such as `is_valid_card_number()`, `is_valid_cvv()`, `is_valid_expiry_date()`, and `is_valid()` that check if the input card number, CVV, and expiry date are valid based on the rules specified in each method. 
+The rules include the length of the card number, the format of the expiry date, and whether the input is numeric or not.
+The class also has a `card_content` property that prompts the user to input the class type (economy or business) and returns the input card information and class type as a tuple.
+
+.The Card class:
+TBA
