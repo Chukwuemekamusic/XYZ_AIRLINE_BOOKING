@@ -32,6 +32,7 @@ The XYZ Airline Ticket Booking System is a command-line application that allows 
 
 The code is organized into different modules/classes to handle various functionalities of the system:
 
+* `project.py`: Contains the Main() for running the application.
 * `flight.py`: Contains the Flight class for managing flights.
 * `customer.py`: Contains the Customer class for managing customer information.
 * `card_validator.py`: Contains the CardValidator class for validating card details.
@@ -64,7 +65,7 @@ pip install -r requirements.txt
 
 TODO: Review this section.
 
-.Main function:
+.Main function(Project.py):
 The `main()` function serves as the entry point for the program and handles the main menu of the application.
 
 The `menu()` function displays the main menu options and allows the user to select one.
